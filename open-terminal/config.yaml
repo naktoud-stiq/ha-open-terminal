@@ -1,0 +1,35 @@
+name: "Open Terminal"
+version: "0.11.35"
+slug: "open_terminal"
+description: "Official Open WebUI Open Terminal packaged for Home Assistant OS"
+url: "https://github.com/open-webui/open-terminal"
+
+arch:
+  - amd64
+  - aarch64
+
+startup: application
+boot: auto
+init: false
+legacy: true
+stage: experimental
+
+image: "ghcr.io/open-webui/open-terminal"
+
+map:
+  - type: data
+    read_only: false
+    path: /home/user
+
+environment:
+  OPEN_TERMINAL_MULTI_USER: "false"
+  OPEN_TERMINAL_ENABLE_SYSTEM_PROMPT: "true"
+  OPEN_TERMINAL_FILE_BROWSER_ROOT: "home"
+  OPEN_TERMINAL_MAX_SESSIONS: "4"
+  OPEN_TERMINAL_CORS_ALLOWED_ORIGINS: "https://homeassistant-florinis.danio-adder.ts.net:8443"
+  OPEN_TERMINAL_INFO: "Sandboxed Open Terminal for Open WebUI running on Home Assistant OS. Persistent workspace is /home/user. Home Assistant configuration, Supervisor API, host filesystem, and Docker socket are not mounted."
+
+backup: cold
+
+options: {}
+schema: {}
