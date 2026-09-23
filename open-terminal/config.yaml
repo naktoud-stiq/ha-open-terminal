@@ -1,5 +1,5 @@
 name: "Open Terminal"
-version: "0.13.0"
+version: "0.14.0"
 slug: "open_terminal"
 description: "Official Open WebUI Open Terminal packaged for Home Assistant OS"
 url: "https://github.com/open-webui/open-terminal"
